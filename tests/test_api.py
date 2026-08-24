@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 
-TEST_DATABASE = Path("/private/tmp/ota_campaign_api_tests.db")
+TEST_DATABASE = Path(__file__).parent / "ota_campaign_api_tests.db"
 os.environ["DATABASE_URL"] = f"sqlite:///{TEST_DATABASE}"
 
 from fastapi.testclient import TestClient
